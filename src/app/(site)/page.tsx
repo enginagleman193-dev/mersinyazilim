@@ -1,136 +1,154 @@
 import Link from "next/link";
 
-export default function HomePage() {
+export const metadata = {
+  title: "Mersin Yazılım | Web Sitesi • Google Haritalar • SEO",
+  description:
+    "Mersin’de web sitesi, Google Haritalar işletme kaydı ve temel SEO çözümleri. Sade, hızlı ve güven veren dijital yapı.",
+};
+
+export default function Page() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-16">
       {/* HERO */}
-      <section className="grid gap-10 md:grid-cols-2 md:items-center">
-        <div>
-          <h1 className="text-3xl font-semibold tracking-tight md:text-5xl">
-            Mersin’de İşinizi Dijitale Taşıyın.
-          </h1>
-          <p className="mt-4 text-gray-600">
-            Web sitesi, Google Haritalar işletme kaydı ve temel SEO çözümleriyle
-            daha görünür, daha ulaşılabilir olun. Sade, hızlı ve güven veren bir
-            dijital yapı kuruyoruz.
-          </p>
-
-          <div className="mt-6 flex gap-3">
-            <Link
-              href="/iletisim"
-              className="rounded-xl bg-gray-900 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800"
-            >
-              Teklif Al
-            </Link>
-            <Link
-              href="/hizmetler"
-              className="rounded-xl border px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50"
-            >
-              Hizmetlere Bak
-            </Link>
-          </div>
-
-          <div className="mt-6 text-xs text-gray-500">
-            Not: Fiyatı sitede yazmıyoruz. İhtiyaca göre kapsamı netleştirip en doğru çözümü öneriyoruz.
-          </div>
+      <section className="relative overflow-hidden rounded-3xl border bg-white p-8 shadow-sm md:p-12">
+        <div className="pointer-events-none absolute inset-0 opacity-70">
+          <div className="absolute -left-40 -top-40 h-96 w-96 rounded-full bg-gray-200 blur-3xl" />
+          <div className="absolute -right-40 -bottom-40 h-96 w-96 rounded-full bg-gray-200 blur-3xl" />
         </div>
 
-        <div className="rounded-2xl border bg-gray-50 p-6">
-          <div className="text-sm font-medium">Hızlı Özet</div>
-          <div className="mt-4 grid gap-3">
-            <div className="rounded-xl bg-white p-4 text-sm">
-              Kurumsal web sitesi (mobil uyumlu, hızlı, iletişim odaklı)
-            </div>
-            <div className="rounded-xl bg-white p-4 text-sm">
-              Google Haritalar işletme kaydı (kurulum + optimizasyon)
-            </div>
-            <div className="rounded-xl bg-white p-4 text-sm">
-              Temel SEO (lokal görünürlük için teknik temel)
-            </div>
+        <div className="relative max-w-3xl">
+          <h1 className="text-3xl font-semibold tracking-tight text-gray-900 md:text-5xl">
+            <span className="text-gray-900">Mersin’de</span> İşinizi Dijitale Taşıyın.
+          </h1>
+
+          <p className="mt-4 text-base text-gray-600 md:text-lg">
+            Web sitesi, Google Haritalar işletme kaydı ve temel SEO ile daha görünür,
+            daha ulaşılabilir olun. Sade, hızlı ve güven veren bir dijital yapı kuruyoruz.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href="/iletisim"
+              className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-gray-800"
+            >
+              Ön Görüşme Talep Et
+            </Link>
+
+            <Link
+              href="/hizmetler"
+              className="inline-flex items-center justify-center rounded-xl border bg-white px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-50"
+            >
+              Hizmetleri Gör
+            </Link>
           </div>
 
-          <Link
-            href="/iletisim"
-            className="mt-5 inline-flex w-full justify-center rounded-xl bg-gray-900 px-5 py-3 text-sm font-medium text-white hover:bg-gray-800"
-          >
-            Ücretsiz Ön Analiz İste
-          </Link>
+          <p className="mt-4 text-sm text-gray-500">
+            Not: Fiyatı sitede yazmıyoruz. İhtiyaca göre kapsamı netleştirip en doğru çözümü öneriyoruz.
+          </p>
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* 3 KART */}
+      <section className="mt-12 grid gap-6 md:grid-cols-3">
+        <Card
+          title="Kurumsal Web Sitesi"
+          desc="Mobil uyumlu, hızlı, iletişim odaklı. Müşterinizin güven duyacağı temiz bir vitrin."
+        />
+        <Card
+          title="Google Haritalar Kaydı"
+          desc="Kurulum ve optimizasyon. Yerel aramalarda daha görünür olmanız için doğru yapılandırma."
+        />
+        <Card
+          title="Temel SEO"
+          desc="Teknik temel, sayfa hızı ve içerik yapısı. Lokal görünürlük için sağlam başlangıç."
+        />
+      </section>
+
+      {/* NASIL ÇALIŞIYORUZ */}
       <section className="mt-16">
-        <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">
+        <h2 className="text-2xl font-semibold tracking-tight text-gray-900 md:text-3xl">
           Nasıl Çalışıyoruz?
         </h2>
         <p className="mt-3 max-w-2xl text-gray-600">
           Süreç net, iletişim hızlı. İşin kapsamını birlikte belirler, teslimatı adım adım yönetiriz.
         </p>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-4">
-          {[
-            {
-              t: "1) İhtiyaç Analizi",
-              d: "Hedef, sektör ve mevcut durum netleşir. Sayfa yapısı belirlenir.",
-            },
-            {
-              t: "2) Tasarım & İçerik",
-              d: "Kurumsal görünüm hazırlanır. Metinler sade ve anlaşılır şekilde düzenlenir.",
-            },
-            {
-              t: "3) Yayın & Kontrol",
-              d: "Hız, mobil uyum ve iletişim kanalları test edilir. Yayına alınır.",
-            },
-            {
-              t: "4) Destek",
-              d: "Gerekli güncellemeler ve iyileştirmeler için hızlı destek sağlanır.",
-            },
-          ].map((i) => (
-            <div key={i.t} className="rounded-2xl border p-6">
-              <div className="font-semibold">{i.t}</div>
-              <p className="mt-2 text-sm text-gray-600">{i.d}</p>
-            </div>
-          ))}
+        <div className="mt-8 grid gap-4">
+          <Step
+            no="1"
+            title="İhtiyaç Analizi"
+            desc="Hedef, sektör ve mevcut durum netleşir. Sayfa yapısı belirlenir."
+          />
+          <Step
+            no="2"
+            title="Tasarım & İçerik"
+            desc="Kurumsal görünüm hazırlanır. Metinler sade ve anlaşılır şekilde düzenlenir."
+          />
+          <Step
+            no="3"
+            title="Yayın & Kontrol"
+            desc="Hız, mobil uyum ve iletişim kanalları test edilir. Yayına alınır."
+          />
+          <Step
+            no="4"
+            title="Destek"
+            desc="Gerekli güncellemeler ve iyileştirmeler için hızlı destek sağlanır."
+          />
         </div>
       </section>
 
-      {/* PROOF */}
-      <section className="mt-16 rounded-2xl border bg-gray-50 p-8">
-        <h2 className="text-xl font-semibold tracking-tight">
-          Önceki Projeler
-        </h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Gerçek teslim edilmiş projeler üzerinden ilerleriz.
-        </p>
+      {/* CTA */}
+      <section className="mt-16 rounded-3xl border bg-white p-8 shadow-sm md:p-10">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="text-xl font-semibold tracking-tight text-gray-900">
+              Hazır mısınız? Kısa bir ön görüşme yapalım.
+            </div>
+            <div className="mt-1 text-sm text-gray-600">
+              Mersin Merkez: Yenişehir / Mezitli / Akdeniz çevresi
+            </div>
+          </div>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {[
-            { name: "Mersin Korkmaz Nakliyat", url: "https://www.mersinkorkmaznakliyat.com" },
-            { name: "Mersin Hizan Evden Eve Nakliyat", url: "https://www.mersinhizanevdenevenakliyat.com.tr" },
-            { name: "Mersin Kardeşler Nakliyat", url: "https://www.mersinkardeslernakliyat.com" },
-          ].map((p) => (
-            <a
-              key={p.url}
-              href={p.url}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-xl bg-white p-4 text-sm hover:bg-gray-100"
-            >
-              <div className="font-medium">{p.name}</div>
-              <div className="mt-1 text-xs text-gray-500 underline">Siteyi görüntüle</div>
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-6">
           <Link
-            href="/projeler"
-            className="inline-flex rounded-xl border bg-white px-5 py-3 text-sm font-medium text-gray-900 hover:bg-gray-100"
+            href="/iletisim"
+            className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800"
           >
-            Tüm Projeleri Gör
+            Ön Görüşme Talep Et
           </Link>
         </div>
       </section>
     </main>
+  );
+}
+
+/* ================== */
+/* BİLEŞENLER         */
+/* ================== */
+
+function Card({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="rounded-2xl border bg-white p-6 shadow-sm">
+      <div className="font-semibold text-gray-900">{title}</div>
+      <p className="mt-2 text-sm text-gray-600">{desc}</p>
+    </div>
+  );
+}
+
+function Step({
+  no,
+  title,
+  desc,
+}: {
+  no: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <div className="rounded-2xl border bg-white p-6 shadow-sm">
+      <div className="text-sm font-semibold text-gray-900">
+        {no}. {title}
+      </div>
+      <p className="mt-2 text-sm text-gray-600">{desc}</p>
+    </div>
   );
 }
