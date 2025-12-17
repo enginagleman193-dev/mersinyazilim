@@ -1,8 +1,9 @@
+import Script from "next/script";
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mersinyazilim.vercel.app"),
+  metadataBase: new URL("https://mersinyazilim.com"),
   title: {
     default: "Mersin Yazılım",
     template: "%s | Mersin Yazılım",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://mersinyazilim.vercel.app",
+    url: "https://mersinyazilim.com",
     siteName: "Mersin Yazılım",
     title: "Mersin Yazılım",
     description:
@@ -51,7 +52,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body>{children}</body>
+      <body>
+        {/* Google Analytics - G-0B7N1S0BJH */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0B7N1S0BJH"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0B7N1S0BJH');
+          `}
+        </Script>
+
+        {children}
+      </body>
     </html>
   );
 }
