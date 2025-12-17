@@ -6,6 +6,15 @@ export const metadata = {
     "Mersin’de web sitesi, Google Haritalar işletme kaydı ve temel SEO çözümleri. Sade, hızlı ve güven veren dijital yapı.",
 };
 
+<section className="sr-only">
+  <h2>Mersin Web Tasarım ve Dijital Çözümler</h2>
+  <p>
+    Mersin Yazılım, Yenişehir, Mezitli ve Akdeniz bölgelerinde
+    kurumsal web sitesi, Google Haritalar işletme kaydı ve
+    temel SEO hizmetleri sunar.
+  </p>
+</section>
+
 export default function Page() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-16">
