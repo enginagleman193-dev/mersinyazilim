@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://mersinyazilim.com/sitemap.xml",
+    sitemap: "https://mersinyazılıcd C:\Users\Deniz\Desktop\mersinyazilimm.com/sitemap.xml",
   };
 }
