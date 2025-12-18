@@ -3,7 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mersinyazilim.com"),
+  metadataBase: new URL("https://mersinyazılım.com"),
   title: {
     default: "Mersin Yazılım",
     template: "%s | Mersin Yazılım",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://mersinyazilim.com",
+    url: "https://mersinyazılım.com",
     siteName: "Mersin Yazılım",
     title: "Mersin Yazılım",
     description:
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mersin Yazılım",
     description:
-      "Mersin’de web sitesi, Google Haritalar işletme kaydı ve temel SEO çözümleri. Sade, hızlı ve güven veren dijital yapı.",
+      "Mersin’de web sitesi, Google Haritalar işletme kaydı ve temel SEO çözümleri.",
     images: ["/og.png"],
   },
   icons: {
@@ -52,24 +52,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body>
-        {/* Google Analytics - G-0B7N1S0BJH */}
+      <head>
+        {/* Google Analytics */}
         <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-0B7N1S0BJH"
+          src="https://www.googletagmanager.com/gtag/js?id=G-SM2D3T94K7"
           strategy="afterInteractive"
         />
-        <Script id="ga-init" strategy="afterInteractive">
+        <Script id="ga-setup" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-0B7N1S0BJH');
+            gtag('config', 'G-SM2D3T94K7');
           `}
         </Script>
-
-        {children}
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
